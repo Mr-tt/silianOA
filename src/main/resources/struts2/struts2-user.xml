@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="userAction" namespace="/" extends="oa_privilege">
+		<action name="userAction_*" method="{1}" class="com.itheima.action.UserAction">
+			<result name="list">jsp/user/list.jsp</result>
+			<result name="addUI">jsp/user/add.jsp</result>
+			<result name="action2action" type="redirectAction">userAction_query.action</result>
+			<result name="updateUI">jsp/user/update.jsp</result>
+			<result name="loginOut">login.jsp</result>
+			<result name="chuchai">/jsp/yewu/chuchaib.jsp</result>
+			<result name="shenqing">/jsp/yewu/shenqing.jsp</result>
+			<result name="selectShenpib">/jsp/yewu/selectShenpib.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.itheima.domain.Privilege" >
+		<id name="id" length="5">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" length="10"></property>
+		<property name="description" length="20"></property>
+		<property name="pid"></property>
+		<property name="isParent"></property>
+		<property name="type"></property>
+		<property name="icon"></property>
+		<property name="url"></property>
+		<property name="target"></property>
+		<set name="roles" table="role_privilege">
+			<key>
+				<column name="id"></column>
+			</key>
+			<many-to-many class="com.itheima.domain.Role" column="rid"></many-to-many>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.itheima.domain.Chuchaib" >
+		<id name="ccid">
+			<generator class="increment"></generator>
+		</id>
+		
+		<property name="zipaiPath" length="100"></property>
+		
+		<property name="username" length="50"></property>
+		<property name="jbsj" length="50"></property>
+		<property name="shzt" length="50"></property>
+		<property name="hbr" length="50"></property>
+		<property name="rq" length="50"></property>
+		<property name="yqwcrq" length="50"></property>
+		<property name="bjsx" length="50"></property>
+		<property name="xmmc" length="50"></property>
+		<property name="ssgdgs" length="50"></property>
+		<property name="ydxz" length="50"></property>
+		<property name="xmzrfa" length="50"></property>
+		<property name="zbfs" length="50"></property>
+		<property name="sjy" length="50"></property>
+		<property name="dwmc" length="50"></property>
+		<property name="lxr" length="50"></property>
+		<property name="zbszd" length="50"></property>
+		<property name="xmdd" length="50"></property>
+		<property name="fcfdsj" length="50"></property>
+		<property name="jzzmj" length="50"></property>
+		<property name="ydrl" length="50"></property>
+		<property name="qyxz" length="50"></property>
+		<property name="tz" length="50"></property>
+		<property name="jl" length="50"></property>
+		<property name="zg" length="50"></property>
+		<property name="jcr" length="50"></property>
+		<property name="qt" length="50"></property>
+		<property name="dhd" length="100"></property>
+		<property name="jftsyq" length="200"></property>
+		<property name="qscl" length="200"></property>
+		<property name="jzdw" length="200"></property>
+		<property name="scbyj" length="200"></property>
+		<property name="gcbyj" length="200"></property>
+		<property name="pbxz" length="200"></property>
+		<property name="htpdxz" length="200"></property>
+		<property name="rwwcqk" length="200"></property>
+		
+	</class>
+</hibernate-mapping>
+

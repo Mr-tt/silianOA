@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.devMode" value="true"/>
+	 <!-- 上传过程中临时文件存放目录
+	<constant name="struts.multipart.saveDir" value="/Users/yehaitao/oaTemp"></constant> -->
+	
+	<include file="struts2/struts2-kehuziyuan.xml"></include>
+	<include file="struts2/struts2-person.xml"></include>
+	<include file="struts2/struts2-department.xml"></include>
+	<include file="struts2/struts2-user.xml"></include>
+	<include file="struts2/struts2-menuitem.xml"></include>
+	<include file="struts2/struts2-role.xml"></include>
+	<include file="struts2/struts2-privilege.xml"></include>
+	<include file="struts2/struts2-login.xml"></include>
+	<include file="struts2/struts2-forward.xml"></include>
+	<include file="struts2/struts2-chuchai.xml"></include>
+	<include file="struts2/struts2-yijian.xml"></include>
+	<include file="struts2/struts2-chakan.xml"></include>
+	
+	<package name="oa_privilege" namespace="/"   extends="struts-default">
+		<interceptors>
+			<interceptor name="privilege_interceptor" class="privilege.interceptor.PrivilegeInterceptor"></interceptor>
+			<interceptor-stack name="privilegeStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="privilege_interceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="privilegeStack"></default-interceptor-ref>
+		<global-results >
+			<result name="error">error.jsp</result>
+		</global-results>
+	</package> 
+	
+</struts>

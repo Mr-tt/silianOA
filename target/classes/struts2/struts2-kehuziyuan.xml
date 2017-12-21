@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="kehuziyuanAction" namespace="/" extends="struts-default">
+		<action name="kehuziyuanAction_*" method="{1}"  class="com.itheima.action.KehuziyuanAction">
+			<result >success.jsp</result>
+			<result name="list">/jsp/yewu/listKhb.jsp</result>
+			
+		</action>
+	</package>
+
+</struts>

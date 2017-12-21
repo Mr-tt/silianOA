@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.itheima.domain.Chakanb" >
+		<id name="ckbId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="jbrq" length="100"></property>
+		<property name="tbr" length="100"></property>
+		<property name="ckxmmc" length="100"></property>
+		<property name="ckxmdd" length="100"></property>
+		<property name="ckrq" length="100"></property>
+		<property name="ckry" length="100"></property>
+		<property name="ckxlmc" length="250"></property>
+		<property name="yj" length="250"></property>
+		<property name="bz" length="250"></property>
+		
+		<property name="gdfatPath" length="250"></property>
+		<property name="dhdfatPath" length="250"></property>
+		
+	</class>
+</hibernate-mapping>
+

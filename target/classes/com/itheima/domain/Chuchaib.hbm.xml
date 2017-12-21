@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.itheima.domain.Chuchaib" >
+		<id name="ccid">
+			<generator class="increment"></generator>
+		</id>
+		
+		<property name="zipaiPath" length="100"></property>
+		
+		<property name="username" length="50"></property>
+		<property name="jbsj" length="50"></property>
+		<property name="shzt" length="50"></property>
+		
+		<property name="hbr" length="50"></property>
+		<property name="ccrq" length="50"></property>
+		<property name="ccdd" length="50"></property>
+		<property name="zgdw" length="50"></property>
+		<property name="dwmc" length="50"></property>
+		<property name="szdq" length="50"></property>
+		<property name="szd" length="50"></property>
+		<property name="fdcmc" length="50"></property>
+		<property name="xjxmmc" length="50"></property>
+		<property name="dwxz" length="50"></property>
+		<property name="xmyqrq" length="50"></property>
+		<property name="sfsbydsq" length="50"></property>
+		<property name="pfsfsq" length="50"></property>
+		<property name="bnsqyy" length="50"></property>
+		<property name="qyxz" length="50"></property>
+		<property name="fcfdsj" length="50"></property>
+		<property name="jzzmj" length="50"></property>
+		<property name="ydrl" length="50"></property>
+		<property name="qytcsj" length="50"></property>
+		<property name="dqthdsj" length="50"></property>
+		<property name="jfdsz" length="50"></property>
+		<property name="jfdszdh" length="50"></property>
+		<property name="jfzjl" length="50"></property>
+		<property name="jfzjldh" length="50"></property>
+		<property name="jfsdzg" length="50"></property>
+		<property name="jfsdzgdh" length="50"></property>
+		<property name="jfzdzg" length="50"></property>
+		<property name="jfzdzgdh" length="50"></property>
+		<property name="yfjl" length="50"></property>
+		<property name="yfjldh" length="50"></property>
+		<property name="yfsdzg" length="50"></property>
+		<property name="yfsdzgdh" length="50"></property>
+		<property name="qt" length="50"></property>
+		<property name="qtdh" length="50"></property>
+		<property name="sjymc" length="50"></property>
+		<property name="sjyzs" length="50"></property>
+		<property name="sjydh" length="50"></property>
+		<property name="xmzrfa" length="500"></property>
+		<property name="jzdw" length="500"></property>
+		<property name="rwwcqk" length="500"></property>
+		<property name="zjpd" length="500"></property>
+		
+	</class>
+</hibernate-mapping>
+

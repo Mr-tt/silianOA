@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="departmentAction" namespace="/" extends="struts-default">
+		<action name="departmentAction_*" method="{1}" class="com.itheima.action.DepartmentAction">
+			<result name="list">jsp/department/list.jsp</result>
+			<result name="addUI">jsp/department/add.jsp</result>
+			<result name="action2action" type="redirectAction">departmentAction_list.action</result>
+			<result name="updateUI">jsp/department/update.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
