@@ -35,7 +35,17 @@ public class ChuchaiAction extends ActionSupport implements ModelDriven<Chuchaib
 	public Chuchaib getModel() {
 		return this.cc;
 	}
+	//属性驱动
+	private String searchWords;
 	
+	public String getSearchWords() {
+		return searchWords;
+	}
+
+	public void setSearchWords(String searchWords) {
+		this.searchWords = searchWords;
+	}
+
 	/**
 	 * 增加出差汇报表
 	 * @return
@@ -91,8 +101,6 @@ public class ChuchaiAction extends ActionSupport implements ModelDriven<Chuchaib
 			}
 			}
 			
-			
-			
 			this.chuchaiService.saveEntity(cc);
 			
           
@@ -114,23 +122,17 @@ public class ChuchaiAction extends ActionSupport implements ModelDriven<Chuchaib
 	 * @return
 	 */
 	public String shenheUI(){
-		Chuchaib cc = this.chuchaiService.findEntityById(this.getModel().getCcid());
-		ActionContext.getContext().getValueStack().push(cc);
+		Chuchaib ccb = this.chuchaiService.findEntityById(this.getModel().getCcid());
+		ActionContext.getContext().getValueStack().push(ccb);
 		return "shenheUI";
 	}
 	
 	public String shenheTG(){
-		Chuchaib cc = this.chuchaiService.findEntityById(this.getModel().getCcid());
-		cc.setShzt("审核通过");
-		this.chuchaiService.updateEntity(cc);
 		
-		return "2shenpi";
-	}
-	
-	public String shenheBTG(){
-		Chuchaib cc = this.chuchaiService.findEntityById(this.getModel().getCcid());
-		cc.setShzt("审核不通过");
-		this.chuchaiService.updateEntity(cc);
+		Chuchaib ccb = this.chuchaiService.findEntityById(this.getModel().getCcid());
+		ccb.setZjpd(cc.getZjpd());
+		ccb.setShzt(cc.getShzt());
+		this.chuchaiService.updateEntity(ccb);
 		
 		return "2shenpi";
 	}
@@ -138,9 +140,48 @@ public class ChuchaiAction extends ActionSupport implements ModelDriven<Chuchaib
 	
 	
 	
+	/**
+	 * 状态查询，查看用户自己填写的出差表
+	 * @return
+	 */
+	public String ztcx(){
+		System.err.println("1");
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		if(u!=null){
+			String username = u.getUsername();
+			Collection<Chuchaib> ccs = this.chuchaiService.selfDaoxulistChuchai(username);
+			ActionContext.getContext().put("ccs", ccs);
+			return "ztcxlist";
+		}else{
+			return "e";
+		}
+		
+	}
 	
 	
+	public String reAdd(){
+		Chuchaib ccb = this.chuchaiService.findEntityById(cc.getCcid());
+		ActionContext.getContext().getValueStack().push(ccb);
+		return "reAdd";
+	}
 	
-	
+	/**
+	 * 根据dwmc查询出差表
+	 * @return
+	 */
+	public String search(){
+		String searchWords = this.searchWords;
+		System.err.println(searchWords);
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		//如果是admin用户直接查询所有的表
+		if(u.getUsername().equals("admin")){
+			Collection ccs = this.chuchaiService.searchByWords(searchWords);
+			ActionContext.getContext().put("ccs", ccs);
+		}else{//不是admin用户-查寻自己提交的出差表
+			Collection ccs = this.chuchaiService.searchByWords(searchWords,u.getUsername());
+			ActionContext.getContext().put("ccs", ccs);
+		}
+		return "list";
+	}
 	
 }

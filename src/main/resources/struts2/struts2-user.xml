@@ -13,6 +13,7 @@
 			<result name="chuchai">/jsp/yewu/chuchaib.jsp</result>
 			<result name="shenqing">/jsp/yewu/shenqing.jsp</result>
 			<result name="selectShenpib">/jsp/yewu/selectShenpib.jsp</result>
+			<result name="listChuchaib">/jsp/yewu/list.jsp</result>	
 		</action>
 	</package>
 

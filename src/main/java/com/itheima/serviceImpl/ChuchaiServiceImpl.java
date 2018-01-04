@@ -29,4 +29,25 @@ public class ChuchaiServiceImpl extends BaseServiceImpl<Chuchaib> implements Chu
 		return this.chuchaiDao.daoxulistChuchai();
 	}
 
+
+	@Override
+	public Collection<Chuchaib> selfDaoxulistChuchai(String username) {
+		
+		return this.chuchaiDao.selfDaoxulistChuchai(username);
+	}
+
+
+	@Override
+	public Collection searchByWords(String searchWords) {
+		return this.chuchaiDao.searchByWords(searchWords);
+	}
+
+
+	@Override
+	public Collection searchByWords(String searchWords, String username) {
+		return this.chuchaiDao.searchByWords(searchWords,username);
+	}
+	
+	
+
 }

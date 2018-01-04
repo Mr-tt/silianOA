@@ -53,6 +53,7 @@
                 		
 						<img border="0" width="11" height="13" src="${pageContext.request.contextPath}/css/images/top/msg.gif" /> 
 						<a href="${pageContext.request.contextPath}/yijian.jsp" target="right">意见箱</a>
+						
 						<span id="msg"></span>
 					</a>
 				</li>

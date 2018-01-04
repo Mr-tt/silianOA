@@ -11,6 +11,8 @@
 			<result name="e">/error.jsp</result>		
 			<result name="shenheUI">/jsp/yewu/shenhechuchaibUI.jsp</result>	
 			<result name="2shenpi" type="redirectAction">chuchaiAction_shenpi.action</result>	
+			<result name="reAdd" >/jsp/yewu/chuchaibNoRequest.jsp</result>	
+			<result name="ztcxlist" >/jsp/yewu/ztcxlist.jsp</result>	
 			<!-- 定义文件上传拦截器 -->
            <interceptor-ref name="fileUpload">
                  <!-- 设置文件上传大小 -->

@@ -15,17 +15,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-
+<form action="chuchaiAction_search.action" method="post">
 <div id="Title_bar">
     <div id="Title_bar_Head"> 
         <div id="Title_Head"></div>
         <div id="Title"><!--页面标题-->
             <img border="0" width="13" height="13" src="${pageContext.request.contextPath}/css/images/title_arrow.gif"/> 出差汇报表管理
+     
+         	
         </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+	        搜索<input type="text" name="searchWords"/> <input type="submit" value="提交"/>
+       
         <div id="Title_End"></div>
     </div>
 </div>
-
+ </form>
 <div id="MainArea">
     <table cellspacing="0" cellpadding="0" class="TableStyle" >
        
@@ -33,6 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <thead>
             <tr align=center valign=middle id=TableTitle>
                 <td width="100">交表人</td>
+                <td width="100">单位名称</td>
                 <td width="100">交表时间</td>
                 <td width="100">审核状态</td>
                 <td>相关操作</td>
@@ -44,7 +51,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <s:iterator value="#ccs">
             <tr class="TableDetail1 template" align=center>
             	<s:hidden name="ccid"></s:hidden>
-                <td ><s:property value="username"/></td>
+                <td ><s:property value="hbr"/></td>
+                <td ><s:property value="dwmc"/></td>
                 <td><s:property value="jbsj"/></td>
                 <td id="shzt"><s:property value="shzt"/></td>
                

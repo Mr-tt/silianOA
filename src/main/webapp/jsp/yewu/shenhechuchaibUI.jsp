@@ -937,7 +937,7 @@ td
  
  </head>
  <body link="blue" vlink="purple">
- <s:form action="chuchaiAction_add.action"  enctype="multipart/form-data" method="post">
+ <s:form action="chuchaiAction_shenheTG.action?ccid=%{ccid}"  enctype="multipart/form-data" method="post">
   <table width="935" border="0" cellpadding="0" cellspacing="0" style='width:701.25pt;border-collapse:collapse;table-layout:fixed;'>
    <col width="72" span="2" class="xl65" style='mso-width-source:userset;mso-width-alt:2304;'/>
    <col width="72" class="xl66" style='mso-width-source:userset;mso-width-alt:2304;'/>
@@ -1091,15 +1091,14 @@ td
    </tr>
    <tr height="56" style='height:42.00pt;mso-height-source:userset;mso-height-alt:840;'/>
    
-  
-   
   </table>
+	<br/><br/><br/>
+	<s:radio list="#{'通过':'通过','不通过':'不通过'}" name="shzt" />
 
-   <br/><br/><br/><br/>
+   <br/><br/><br/>
    <div align="center">
-		<s:a href="chuchaiAction_shenheTG.action?ccid=%{ccid}"><input type="button" value="审核通过"/></s:a>
-		<s:a href="chuchaiAction_shenheBTG.action?ccid=%{ccid}"><input type="button" value="审核不通过" style="color:red"/></s:a><br>
-	</div>
+		<input type="submit" value="提交审核"/>
+   </div>
        <img  src="${pageContext.request.contextPath }/<s:property value="zipaiPath"/>"  style="width:300; height:300px"  >
  </s:form> 
  </body>

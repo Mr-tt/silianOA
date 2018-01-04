@@ -11,9 +11,11 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.itheima.domain.Chuchaib;
 import com.itheima.domain.Department;
 import com.itheima.domain.Role;
 import com.itheima.domain.User;
+import com.itheima.service.ChuchaiService;
 import com.itheima.service.DepartmentService;
 import com.itheima.service.RoleService;
 import com.itheima.service.UserService;
@@ -34,6 +36,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	private DepartmentService departmentService;
 	@Resource(name="roleService")
 	private RoleService roleService;
+	@Resource(name="chuchaiService")
+	private ChuchaiService chuchaiService;
 	
 	private User user = new User();
 	public void setUser(User user) {
@@ -170,10 +174,22 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	 */
 	
 	public String shenpiUI(){
+		System.err.println("11");
 		return "selectShenpib";
 	}
 	
-	
+	/**
+	 * 状态查询，查看用户自己填写的出差表
+	 * @return
+	 */
+	public String ztcx(){
+		System.err.println("1");
+		User u = (User) ActionContext.getContext().getSession().get("user");
+		String username = u.getUsername();
+		Collection<Chuchaib> ccs = this.chuchaiService.selfDaoxulistChuchai(username);
+		ActionContext.getContext().put("ccs", ccs);
+		return "listChuchaib";
+	}
 	
 	
 	

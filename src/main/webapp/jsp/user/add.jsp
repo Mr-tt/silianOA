@@ -45,6 +45,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							（登录名要唯一）
 						</td>
                     </tr>
+                    <tr><td>密码</td>
+                        <td><s:textfield name="password" cssClass="InputStyle"></s:textfield></td>
+                    </tr>
+                        
 					<tr><td>性别</td>
                         <td>
                         	<s:radio name="sex" list="{'男','女'}"/>
